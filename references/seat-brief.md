@@ -30,7 +30,8 @@ DRAFT: <path(s), or the full text below>
 YOUR CHECKS:
 <this seat's section of references/profiles/<profile>.md>
 
-Read the whole draft yourself before you judge anything. Work through each check
+Read the whole draft yourself before you judge anything. Open no file other than
+the draft and the target role, and run no other setup routine. Work through each check
 and decide: it passes, or it is a finding. Report findings only, one row each:
 
 | Severity | Check | Where | Problem | Consequence | Fix |

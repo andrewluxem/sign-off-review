@@ -60,7 +60,7 @@ For each driver the conclusion rests on, ask what it is compared with: a base ra
 Assume the draft went out and failed its purpose. Write three reasons, most likely first. Tag at least one `(internal)`: a cause on the author's or client's own side. The profile lists prompts.
 
 ### 7. Consolidate and calibrate
-Apply `references/severity.md`:
+Apply `references/severity.md`, in this order:
 - Merge findings that share a root cause. Keep the highest severity and the seat whose check names the root cause, except that a mismatch with a tie-out row stays with `Lead`.
 - Give every Blocker and Major a one-sentence consequence, or rate it Minor.
 - Run the calibration questions on every Blocker and Major. Over-rating fails the review just as a missed Blocker does.
