@@ -205,6 +205,17 @@ class CommandLineTest(unittest.TestCase):
         self.assertIn("selftest: all", result.stdout)
 
 
+class EvalRunsTest(unittest.TestCase):
+    def test_stored_eval_reviews_pass(self):
+        found = []
+        for directory, _, filenames in os.walk(os.path.join(ROOT, "evals", "runs")):
+            found.extend(os.path.join(directory, f) for f in filenames if ".review-" in f and f.endswith(".md"))
+        for path in sorted(found):
+            with self.subTest(review=os.path.relpath(path, ROOT)):
+                code, messages = check_report.check_file(path)
+                self.assertEqual(code, 0, messages)
+
+
 class RepoHygieneTest(unittest.TestCase):
     def test_no_em_dash_in_repo(self):
         offenders = []
