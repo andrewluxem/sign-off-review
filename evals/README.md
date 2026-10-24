@@ -17,8 +17,8 @@ Every company, person, product and number in this directory is invented. Any res
 
 1. Start a fresh Claude Code session with the skill installed. The reviewer must not read the case file, only the inputs and the prompt.
 2. Paste the case's prompt.
-3. Move the review it writes next to the input into `runs/<date>/`, so later runs do not mistake it for a prior review.
-4. Run `python3 scripts/check_report.py runs/<date>/<review>.md`.
+3. Move the review it writes next to the input into `runs/<date>/<commit>/`, where `<commit>` is the short hash of the skill version that ran, so later runs do not mistake it for a prior review.
+4. Run `python3 scripts/check_report.py runs/<date>/<commit>/<review>.md`.
 5. Grade each must and must-not criterion by hand. A case passes when every must holds and no must-not occurs.
 
 CI does not run the evals. It runs the unit tests and the validator selftest. The unit tests also run the validator on every review stored under `runs/`.
