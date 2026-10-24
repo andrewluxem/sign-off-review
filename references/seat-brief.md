@@ -31,8 +31,9 @@ YOUR CHECKS:
 <this seat's section of references/profiles/<profile>.md>
 
 Read the whole draft yourself before you judge anything. Open no file other than
-the draft and the target role, and run no other setup routine. Work through each check
-and decide: it passes, or it is a finding. Report findings only, one row each:
+the draft (and, for job-search only, the target role), and run no other setup
+routine. Work through each check and decide: it passes, or it is a finding.
+Report findings only, one row each:
 
 | Severity | Check | Where | Problem | Consequence | Fix |
 
@@ -62,5 +63,6 @@ list what to keep.
 
 - Add the Seat cell to each row, with the persona where the profile names one, and drop the Check column.
 - Merge rows that share a root cause across seats.
+- When merging, give a finding that fits checks in more than one seat to the seat whose check names it most specifically; on a tie, the lower seat number. A mismatch with a tie-out row still stays with `Lead`.
 - Apply the calibration questions and both false-alarm lists.
 - Build "What is good and must survive" from the keep lists.

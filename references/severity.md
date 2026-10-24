@@ -5,7 +5,7 @@
 **Blocker.** As written, the draft would mislead its reader, or it cannot support the decision or purpose it exists for. Typical Blockers:
 - the same figure stated with two values;
 - no answer to the question;
-- a headline claim the author could not back up if asked;
+- a headline claim the draft gives no checkable support for;
 - a step a fresh executor cannot carry out, or a destructive step with no way back.
 
 **Major.** A sharp reader would find a real weakness. It costs credibility, invites a second round or leaves a risk unpriced, but once fixed the draft can do its job.
@@ -17,6 +17,8 @@
 Every Blocker and Major carries one sentence naming who does what wrong, or what fails, if the draft goes out as it is. "Weakens the argument" and "reduces clarity" are not consequences. If you cannot write one, the finding is Minor.
 
 ## Calibration questions
+
+Judge each finding as if it were the only problem in the draft. Another finding forcing Return never lowers a finding's severity. Findings that share a root cause still merge into one.
 
 Ask these of every Blocker and Major before setting the verdict.
 
