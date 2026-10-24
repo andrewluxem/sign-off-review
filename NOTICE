@@ -1,0 +1,7 @@
+sign-off-review
+Copyright (c) 2026 Andrew Luxem. Licensed under the MIT License (see LICENSE).
+
+This project was written from scratch. Its five-seat review structure was
+inspired by the partner-review skill in aipiratesMunich/open-strategy-firm
+(MIT, https://github.com/aipiratesMunich/open-strategy-firm). No text or code
+from that project is reproduced here, so no upstream notice is required.
