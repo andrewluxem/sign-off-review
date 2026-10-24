@@ -205,6 +205,60 @@ class CommandLineTest(unittest.TestCase):
         self.assertIn("selftest: all", result.stdout)
 
 
+class ProfileFilesTest(unittest.TestCase):
+    """The profile files and the validator's persona table must agree."""
+
+    def read_profile(self, name):
+        path = os.path.join(ROOT, "references", "profiles", name + ".md")
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+
+    def seat_sections(self, text):
+        sections = {}
+        current = None
+        for line in text.splitlines():
+            if line.startswith("## "):
+                current = line[3:].strip()
+                sections[current] = []
+            elif current is not None:
+                sections[current].append(line)
+        return sections
+
+    def test_every_profile_has_a_file(self):
+        names = sorted(f[:-3] for f in os.listdir(os.path.join(ROOT, "references", "profiles")) if f.endswith(".md"))
+        self.assertEqual(names, sorted(check_report.PROFILES))
+
+    def test_seat_headings_match_validator(self):
+        for profile, personas in check_report.PROFILES.items():
+            headings = [h for h in self.seat_sections(self.read_profile(profile)) if h.startswith("Seat ")]
+            expected = []
+            for number, seat in enumerate(check_report.SEATS, 1):
+                persona = personas.get(seat)
+                expected.append("Seat %d: %s" % (number, seat) + (" (%s)" % persona if persona else ""))
+            with self.subTest(profile=profile):
+                self.assertEqual(headings, expected)
+
+    def test_each_seat_has_three_to_five_numbered_checks(self):
+        for profile in check_report.PROFILES:
+            sections = self.seat_sections(self.read_profile(profile))
+            for number in range(1, 6):
+                heading = next(h for h in sections if h.startswith("Seat %d:" % number))
+                checks = [line for line in sections[heading] if line.startswith("- **%d." % number)]
+                ids = [line.split("**")[1] for line in checks]
+                with self.subTest(profile=profile, seat=number):
+                    self.assertTrue(3 <= len(checks) <= 5, checks)
+                    self.assertEqual(ids, ["%d.%d" % (number, i) for i in range(1, len(checks) + 1)])
+
+    def test_profiles_have_shared_sections(self):
+        for profile in check_report.PROFILES:
+            sections = self.seat_sections(self.read_profile(profile))
+            for name in ("Tie-out scope", "Outside view", "Premortem prompts", "False alarms (%s)" % profile):
+                with self.subTest(profile=profile, section=name):
+                    self.assertIn(name, sections)
+            premortem = "\n".join(sections["Premortem prompts"])
+            self.assertIn("Internal", premortem)
+
+
 class EvalRunsTest(unittest.TestCase):
     def test_stored_eval_reviews_pass(self):
         found = []
