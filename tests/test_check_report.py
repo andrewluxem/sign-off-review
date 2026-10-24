@@ -143,6 +143,13 @@ class RuleDetailTest(unittest.TestCase):
             "| Minor | Logic |", "| Minor | Decision (owner) |")
         self.assertEqual(self.check(text), (0, []))
 
+    def test_optional_assumptions_line_is_allowed(self):
+        text = check_report.GOOD_RETURN.replace(
+            "**Answer the draft gives:** Yes, closing saves $2.0M a year.\n",
+            "**Answer the draft gives:** Yes, closing saves $2.0M a year.\n"
+            "**Assumptions:** Stage 3 by default; profile detected from content.\n")
+        self.assertEqual(self.check(text), (0, []))
+
     def test_blank_lines_before_header_are_allowed(self):
         self.assertEqual(self.check("\n\n" + check_report.GOOD_RETURN)[0], 0)
 

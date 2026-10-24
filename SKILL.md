@@ -9,7 +9,7 @@ Decide whether a draft can leave your hands and, if not, exactly what must chang
 
 ## Inputs
 
-Ask only for what is missing, in one message. If the user does not answer, proceed and flag each assumption in the review.
+Ask only for what is missing, in one message. If the user does not answer, proceed and list each assumption on an `**Assumptions:**` line under the review header.
 
 1. **Draft.** A path or pasted text: Markdown, plain text, or PDF and DOCX when the harness can read them. Several files are reviewed together as one submission.
 2. **Question.** What the draft must answer, or the decision it supports. If missing, reconstruct it from the draft and mark it `(reconstructed, assumption)`.
@@ -54,14 +54,14 @@ Each seat returns finding rows and up to three things it would keep.
 Compare the inventory with itself. When the draft states the same quantity with two values that cannot both be true after rounding, add a row to "Numbers that do not tie" and a Blocker finding whose fix starts with "Reconcile". Size does not matter. When only your own arithmetic disagrees with the draft (a column that does not sum, a rate that does not follow), it is at most Major, the Problem cell shows the arithmetic, and it gets no tie-out row. Edge cases: `references/severity.md`.
 
 ### 5. Outside view (Lead)
-For each driver the conclusion rests on, ask what it is compared with: a base rate, a benchmark, a past result. On `brief-post` and `pitch`, check every benchmark the draft cites against a source fetched this session. List each missing or unverified comparison under "Missing outside view". Never supply a benchmark from memory. A gap becomes a finding only when a decision driver rests on it.
+For each driver the conclusion rests on, ask what it is compared with: a base rate, a benchmark, a past result. On `brief-post` and `pitch`, check every benchmark the draft cites against a source fetched this session. List each missing or unverified comparison under "Missing outside view". Never supply a benchmark from memory. A gap becomes a finding only when a decision driver rests on it; if a seat already raised it, cite that finding's number instead of adding a row.
 
 ### 6. Premortem (Lead)
 Assume the draft went out and failed its purpose. Write three reasons, most likely first. Tag at least one `(internal)`: a cause on the author's or client's own side. The profile lists prompts.
 
 ### 7. Consolidate and calibrate
 Apply `references/severity.md`:
-- Merge findings that share a root cause. Keep the highest severity and the seat whose check names the root cause.
+- Merge findings that share a root cause. Keep the highest severity and the seat whose check names the root cause, except that a mismatch with a tie-out row stays with `Lead`.
 - Give every Blocker and Major a one-sentence consequence, or rate it Minor.
 - Run the calibration questions on every Blocker and Major. Over-rating fails the review just as a missed Blocker does.
 - Drop anything on the general or profile false-alarm lists.
@@ -84,6 +84,7 @@ If you can run Python, run `python3 <skill dir>/scripts/check_report.py <review 
 **In one line:** <the reason for the verdict, for someone who reads nothing else>
 **Question:** <question> (given | reconstructed, assumption)
 **Answer the draft gives:** <one sentence>
+**Assumptions:** <optional: profile, stage or role assumed without confirmation>
 
 ## Findings
 | # | Severity | Seat | Where | Problem | Consequence | Fix |

@@ -43,6 +43,8 @@ and decide: it passes, or it is a finding. Report findings only, one row each:
 - Problem: what is wrong, quoting the draft.
 - Consequence: one sentence on who does what wrong, or what fails, because of it.
   Required for Blocker and Major. If you cannot write one, rate it Minor.
+  A problem that rests only on your own arithmetic (a total that does not sum,
+  a rate that does not follow) is Major at most; show the arithmetic.
 - Fix: an instruction that starts with a verb (Reconcile, Cut, Replace, Add, Move,
   Name, Source). Never "consider", "you may" or "perhaps".
 
