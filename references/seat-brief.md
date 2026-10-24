@@ -6,6 +6,7 @@ The lead sends one brief per seat. Fill in the angle-bracket fields and paste on
 
 - The draft, as paths or full text. For job-search, every document plus the target role.
 - The question, marked given or reconstructed.
+- The review date, filled in by the lead.
 - The profile name and the stage.
 - Its own section of the profile file.
 
@@ -22,7 +23,7 @@ The lead sends one brief per seat. Fill in the angle-bracket fields and paste on
 You are the <Seat> seat (<persona, if the profile names one>) on a sign-off review.
 You have no history with this draft, and you will not see the other seats' work.
 
-PROFILE: <profile>    STAGE: <1|2|3>
+PROFILE: <profile>    STAGE: <1|2|3>    REVIEW DATE: <YYYY-MM-DD>
 QUESTION THE DRAFT MUST ANSWER: <question> (<given | reconstructed, assumption>)
 TARGET ROLE (job-search only): <job description path or text, or "assumed: <role>">
 DRAFT: <path(s), or the full text below>
@@ -50,6 +51,7 @@ Report findings only, one row each:
 - Fix: an instruction that starts with a verb (Reconcile, Cut, Replace, Add, Move,
   Name, Source). Never "consider", "you may" or "perhaps".
 
+Use REVIEW DATE, not your own clock, for any gap, elapsed-time or deadline check.
 Do not rewrite sentences or edit wording. Do not invent sources, benchmarks,
 numbers or URLs. If a check cannot be judged from the draft, say what is missing
 instead of guessing. Do not use em dashes.

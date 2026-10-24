@@ -45,8 +45,9 @@ List every figure the draft states with its value, unit, location and stated sou
 ### 3. Run the seats
 Load the profile. Stage 3 runs all five seats: Decision, Logic, Evidence, Skeptic, Outsider. Stages 1 and 2 run Decision and Logic only.
 
-- **Subagents available:** one subagent per seat, all at once, each briefed from `references/seat-brief.md` with the draft, the question, the profile name, the stage and that seat's section of the profile file. Nothing else: no other seat's checks or findings, no author reasoning, no chat history, no inventory.
+- **Subagents available:** one subagent per seat, all at once, each briefed from `references/seat-brief.md` with the draft, the question, the profile name, the stage, the review date and that seat's section of the profile file. Nothing else: no other seat's checks or findings, no author reasoning, no chat history, no inventory.
 - **No subagents:** run the seats one at a time, in order. Write down each seat's findings before starting the next, and never go back to change an earlier seat's findings.
+- **A launch is refused:** run that seat in sequence as above, and note `seat N ran inline` on the Assumptions line.
 
 Each seat returns finding rows and up to three things it would keep.
 
@@ -132,4 +133,4 @@ Given a prior review of the same draft:
 
 ## Working with other skills
 - **avoid-ai-writing:** run it after the author applies this review's fixes, never while a Return is unresolved. If it changes a number or a claim, run a re-review.
-- **gauntlet-loop:** this skill can serve as gauntlet's measurement critic, with the bar "verdict is Release or Release with fixes under profile <profile>, and check_report.py exits 0". Each round, a fresh critic runs a full review, not a re-review, because gauntlet critics get no history. The orchestrator forwards only finding 1 to the builder, which keeps gauntlet's one-gap rule. Details in the README.
+- **gauntlet-loop:** this skill can serve as gauntlet's measurement critic, with the bar "verdict is Release or Release with fixes under profile <profile>, and check_report.py exits 0". Each round, a fresh critic runs a full review, not a re-review, because gauntlet critics get no history. The orchestrator forwards only finding 1 to the builder, which keeps gauntlet's one-gap rule.
