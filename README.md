@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/banner.svg" alt="sign-off-review: Agent skill: five-seat sign-off review with number tie-out, premortem and a Return / Release with fixes / Release verdict, backed by a stdlib validator." width="100%"></p>
+<p align="center"><img src="docs/banner.svg" alt="sign-off-review: Agent skill: five-seat sign-off review with number tie-out, premortem and a Return / Release with fixes / Release verdict, backed by a stdlib validator."></p>
 
 # sign-off-review
 
