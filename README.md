@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="sign-off-review: Agent skill: five-seat sign-off review with number tie-out, premortem and a Return / Release with fixes / Release verdict, backed by a stdlib validator." width="100%"></p>
+
 # sign-off-review
 
 An agent skill that decides whether a draft can go out. It reads the draft from five independent seats, ties out every number, checks for an outside view and runs a premortem. It returns a severity-ranked findings table and one of three verdicts: **Return**, **Release with fixes** or **Release**. A standard-library Python validator enforces the verdict rules, so a slip in the model's reasoning cannot release a draft that should go back.
